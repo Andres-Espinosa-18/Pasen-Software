@@ -1,0 +1,37 @@
+Medida un producto, usado por usuarios espeficificos, para lograr, objetivos especificos, siempre 
+con eficiencia, eficacia y satisfacción. ISO 9241-11 (2018)
+
+Objetivo: Diseñar sistemas que comprendan, sin tantas instrucciones extensas, se utilicen sin 
+errores, generen confianza y satisfacción al usuario.
+
+Importante: interaccion humano computador
+Humano: capcaidades cognitivas, perceptuales y emocionales.
+Computador: hardware software interfaz y retroalimentación
+Interacción: diálogo entre ambos
+Ej: banca movil, humano: consultar saldo, computador: interfafz, interacción: botones, respuesta.
+Objetivos IHC: incrementar eficiiencia, eficacia, satisfacción, reducir errores
+Sistema debe ser accesible.
+
+IHC historia: Era de computación por lotes, 40's 60's NO existía interacción directa.
+
+60's 70's: comandos, surge la interacción por linea de comandos.
+
+80's 90's: Introducción del ratón, ventanas, iconos, menús
+
+90's 2010: Interfaces en navegadores, dispositivos moviles, multitouch.
+
+2010 - Actualidad: Voz, gestos, realidad aumentada, asistentes virtuales.
+
+Atributos de la usabilidad, describen las dimensiones que permiten evaluar y diseñar un sistema usable
+
+Aprendibilidad, Eficiecnia (rapidez), Memorabilidad (que tan faicl es recordar el uso),
+Tasa de Error(Cuantos errores comete el usuario), Satisfacción(Nivel de agrado/comodidad)
+
+Experiencia del usuario: UX
+Percepciones, emociones, y respuestas que experimenta una persona al interactuar con un producto.
+
+Diferencias entre la Usabilidad y UX
+Aspecto                 Usabilidad                      UX
+Enfoque             Facilidad y Eficiencia de uso       Emociones, motivaciones y satisfacción global
+Resultado           Es facil de usar?                   Agradable y significativo de usar?
+Resultado:              Interfaz funcional y clara      Experiencia positiva, memorable, coherente
