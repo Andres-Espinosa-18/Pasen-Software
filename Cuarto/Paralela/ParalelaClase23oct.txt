@@ -1,0 +1,26 @@
+Computadordora dispareja, no excento que una termine
+más rápido que la otra.
+
+excenciales en el mundo de las computadoras paralelas degido a su habilidad para manejar grandes 
+vectores y matrices.
+
+Disitntos datos, ejecutando una misma accion. 
+SIMD: un unico flujo de control que opera sobre múltiples elementos de datos
+Buena eficiencia energética. Idael para GPUs y unidades vectoriales (AVX, SSE)
+
+Python, lenguaje que más consume energía, más fácil sea el lenguaje para nosotros,
+por detrás, cosas más complejas 
+
+Arquitectura ya conocida.
+as Secuenciales, SISD, sistemas embebidos, caractteristicas deficientes "simples", 
+Secuencial, 1- Codigo a ejecutar 2- Decodificar instrucciones 3- Operandos 4- Ejecutar y resultado
+Arquitectura de von Neuman 
+
+Computadora Paralela: o 2 más procesadores independientes, cooperan y se comunican.
+Programador debe dividir el problema en varias partes
+Ejecutar a la vez, clasificacion de FLynn
+2 PARAMETROS PARA TAXOMNOMIA DE FLYNN, NRO INTRSUCCIONES NRO DE DATOS.
+
+Compilador: convierte las isntrucciones del programa a lenguaje máquina.
+
+Memorias Distribuidas, computa

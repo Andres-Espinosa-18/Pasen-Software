@@ -1,0 +1,20 @@
+Componetes UX:
+Usabilidad, accesibilidad, deseable(emoción, tema cognitivo).
+Ejemplo: Netflix, sonido de inicio al una serie (tudummm).
+
+Pruebas de Software, da un error. AWS, se cayó, confianza baja, represalias económicas.
+Ningun sistema es 100% seguro, la seguridad forma parte de la claidad
+
+Util, fiabble, usable, accesible, seguridad, valor (debe ser valioso, útil)
+
+UX: el usuario se siente seguro de desarrollar la app, diseño agradable, amigabilidad.
+Cumplimos, existe usabilidad. 
+
+Conclusiones, la usabilidad es la base de una buena interacción, humano computador IHC
+IHC evolucionó desde las primeras máquinas, hasta inteligencia emocional.
+
+Atributos, poder medir la calidad de uso, referencia a los atributos,
+UX: más allá conexión emocional, tecnología usuario, Atributos con Componentes diferenciar.
+
+ISO 9241-210 (2019)
+

@@ -1,0 +1,42 @@
+Análisis, arquitectos, encargados de diseñar la construccion, forma, del software, que componentes
+se van a involucrar, como s einterconectan, aspectos correspondientes al diseñp
+Desarrollo: fase de codificación, lenguaje, infraestrucgtura tecnológica, aspectos técnicos.
+Etapa de analisis, uno puede ir bosquejando las PRUEBAS, Pruebas: garantizar que lo que, el 
+cliente solicitó, lo tiene y es de calidad.
+Implementación: funcionalidad de la empresa, o ya dejamos instalado al usuario funcionando, como
+lo prometimos.
+Mantenimiento: usuario molestandonos.
+Ciclo de vida, procesos y actividades que cubren el desarrollo de software
+
+Modelos de desarrollo: forma en que abordamos estas actividades, el modelo convencional, o en 
+cascada aborda esto de manera secuencial, el SW, se basa en el uso d emodelos, abstracciones
+de las realidades, o de lo que uno pretende llevar a efecto.
+
+Abstraccion borrador, no es necesario decidir la forma, es necesarioq ue tenga un elemtno que 
+nos permita borrar.
+
+Modelos, cascada, habiamos visto, lineal, secuencial.
+
+Espiral: se conforman en espiral, en la que cada buena iteración representa un conjuntno de 
+actividades, se utiliza para minimizar los riesgos.
+Connotacion angular, desarrollo propiamente del producto, radial: costo del proceso de desarrollo.
+
+Prototipos: al usuario, el quiere ver algo, algo como en papel ya puede ser un prototipo.
+mostrar interfaces, etc, para que el usario esté satisfecho, complicaciones de prototipos.
+Inconveniente: puede creer que el prototipo es la version final 
+
+Iterativo: tenemos claros los modulos y componentes que formaran parte de mi aplicación, grupos
+grandes de desarrollo, cada grupo tendrá su módulo.
+
+Desarrollo rápido de aplicaciones: se lo utiliza en productos, que no van más allá de 90 días
+plazo.
+
+Metodología: Desarrollo de software racional, estructurar, planificacion, control, visualizando
+la racionalidad, nos indica quien va ser, como, donde, porque.
+
+Objetivos: Valores agregados, uno de ellos, aspecto crítico. Aspecos fundamentales, estandarizar
+la comunicación. 
+
+Clasificacioón:
+Robustas o tradicionlaes: RUP MSF METRICA: robustas pero burocráficas, mucha documentación
+Agiles: SCRUM, XP, Iconix, Cristal Methods, AUP, KanBan, ScrumKanban

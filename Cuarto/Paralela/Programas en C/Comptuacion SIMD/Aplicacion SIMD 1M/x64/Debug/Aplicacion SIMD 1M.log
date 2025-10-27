@@ -1,0 +1,4 @@
+﻿  Aplicacion SIMD 1M.cpp
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Comptuacion SIMD\Aplicacion SIMD 1M\Aplicacion SIMD 1M.cpp(12,7): error C2148: el tamaño total de la matriz no debe superar los 0x7fffffff bytes
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Comptuacion SIMD\Aplicacion SIMD 1M\Aplicacion SIMD 1M.cpp(12,13): error C2148: el tamaño total de la matriz no debe superar los 0x7fffffff bytes
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Comptuacion SIMD\Aplicacion SIMD 1M\Aplicacion SIMD 1M.cpp(12,19): error C2148: el tamaño total de la matriz no debe superar los 0x7fffffff bytes
