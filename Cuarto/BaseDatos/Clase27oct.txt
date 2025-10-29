@@ -1,0 +1,47 @@
+Normalizacion, reducir redundancias, evitar anomalias, insercion, eliminacion, actualizacion 
+y garantiar la integridad de los datos.
+
+Problemas: 
+los datos del profesor se repiten en cada fila
+Anomalia de eliminación
+Anomalia de actualización.
+
+Dependencias funcionales. DF ocurre cuando el valor de un atributo o conjunto de atributos 
+determina de forma única el valor de otro atributo
+
+Se represena como A -> B significa que el atributo A determina B
+
+Ejemplo, ID_empleado --> Nombre Departamento
+
+Tipos de claves, clave primria: identifica de forma única cada registro
+
+Caracteristicas: Unicidad, cada valor de la clave debe ser único, no puede haber dos filas con 
+el mismo valor
+No nulidad: ningun valor de la clave primaria puede cambiar
+Minimalidad, solo los atributos necesarios para garantgizar Unicidad
+Inmutabilidad lógica No debe depedner de valores derivados o calculados.
+
+Clave candidata, atributos que se pueden indentificar de manera única un registro, en una tabla
+o entidad
+
+Puede haber varias llaves candidatas, pero solo una se elige como clave primaria.
+
+Llaves candidatas, ID_empleado, C+edula, Email
+Llave primaria elegida, ID_empleada
+LLave alternativas: Cédula, Email
+
+Primera Forma Normalizacion
+Una tabla está en Primera Forma Normal (1FN), cuando todos los atributos contienen valores 
+atómicos (indivisibles) sin grupos repetidos, ni listas dentro de la misma celda.
+
+Segunda Forma Normal (2FN)
+
+Está en 2FN si cumple que está en 1FN, valores atómicos no repetitivos y registro úinco.
+
+Todos los atributos no clave dependen totalmente de la clave primaria completa, y no solo de
+una parte de ella, en caso de que sea compuesta
+
+Una solucion, creer otra entidad, y distribuir de tal forma que ambas son 2FN, o crear otra clave
+
+3FN: debe cumplir 2FN. Ningún atributo no clave, depende transitivamente de la Clave primaria
+A->B->C, donde a es la clave primaria y C un atributo no 

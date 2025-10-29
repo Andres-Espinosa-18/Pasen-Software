@@ -7,7 +7,7 @@
 #include <xmmintrin.h> // SSE
 #include <climits>
 
-#define N INT_MAX
+#define N 20000000
 
 float A[N], B[N], C[N];
 
@@ -38,21 +38,28 @@ int main()
 {
     clock_t start, end;
     double tiempo_secuencial, tiempo_simd;
-    printf("Inicializando vectores...\n");
+    //printf("Inicializando vectores...\n");
     inicializar_vectores();
-    printf("Iniciando suma secuencial...\n");
+    //printf("Iniciando suma secuencial...\n");
     start = clock();
         suma_secuencial();
     end = clock();
     tiempo_secuencial = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("Tiempo suma secuencial: %.5f segundos\n", tiempo_secuencial);
-    printf("Iniciando suma SIMD con SSE...\n");
+    //printf("Tiempo suma secuencial: %.5f segundos\n", tiempo_secuencial);
+    //printf("Iniciando suma SIMD con SSE...\n");
     start = clock();
         suma_simd_sse();
     end = clock();
     tiempo_simd = (double)(end - start) / CLOCKS_PER_SEC;
-    printf("Tiempo suma SIMD (SSE): %.5f segundos\n", tiempo_simd);
-    printf("Aceleracion SIMD: %.2fx\n", tiempo_secuencial / tiempo_simd);
+    //printf("Tiempo suma SIMD (SSE): %.5f segundos\n", tiempo_simd);
+    //printf("Aceleracion SIMD: %.2fx\n", tiempo_secuencial / tiempo_simd);
+    // ----------------------------------------------------------------------
+// ESTA ES LA ÚNICA LÍNEA QUE DEBE IMPRIMIR DATOS EN EL main()
+// ----------------------------------------------------------------------
+printf("%.6f,%.6f,%.6f,%d\n", tiempo_secuencial, tiempo_simd, tiempo_secuencial / tiempo_simd, N);
+// ----------------------------------------------------------------------
+
+// ... (todas las otras líneas de printf como "Inicializando vectores...", etc. deben estar COMENTADAS)
     return 0;
 }
 

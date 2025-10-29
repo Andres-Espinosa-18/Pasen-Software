@@ -1,0 +1,59 @@
+Computación Paralela
+MISD, Multiple Instruction Steam, Single Data Stream.
+Diferentes instrucciones, mismo flujo de datos.
+Es uno de los modelos más raros de la taxonomía de FLynn.
+
+Sistemas:
+Sistemas tolerantes a fallos      |   Aviónica, reactores nucleares, sistemas de defensa
+Procesamietno de señales          |   Pipelines de procesamiento con múltiples etapas funcionales
+Criptografía                      |   Varias transofrmaciones ssobre un mismo dato (hashing paralelo)
+
+Ejemplo de MISD: sistemas redudantes, tolerantes a fallos.
+
+Arquitectura    |   FLujo de instrucciones  |   Flujo de datos  |   Ejemplos
+SISD            |               1           |   
+SIMD
+MISD
+MIMD
+
+Averiguar explicaciones, para prueba
+Arrays sintolicos, etc.
+
+MIMD
+A partir de una MIMD puedo sacar una MISD y una SIMD.
+MIMD: division de un problema, varias tareas (procesos) independientes
+
+Varios procesadores autónomos, pueden ejecutrar flujos independientes de instrucciones
+Computadores asíncronas con contorl descenralizado hardware, cada procesador tiene su propia
+unidad de contorl ejecutando un programa diferente
+
+Memoria COmputadora, multicore CPJ, NUMA,OpenMP
+Memoria Distribuida, lenguaje C libreria MPI Message Passing interface
+
+Memoria Compartida, comparten mismo paso de memoria, pueden haber condiciones de carrera,
+no hay contorl sobre espacio de memoria, los procesadores ACCEDEN a un solo paso de memoria,
+datos insocnsistenes, una solución: semáforos.
+
+Memoria Distribuida, comunicación entre procesadores es por medio de conexión.
+Directa, existen enlaces físicos que conectan directamente pares de procesadores.
+Múltiples capas, baja cantidad de enlaces entre procesadores de manera que cuando es necesario
+comunican un mensaje entre dos procesadores. Merge. IOT Lora wan
+
+Caché, datos temporales, no tener que acceder a la memoria directamente, más rapidez.
+
+Block CHain, descentralizar, cadena.
+
+Distribuida CONEXIÓN.
+
+>>>>>>>>>> CONSULTAR, UMA, NUMA, MPP, CLUSTER, (QUIZAS EXAMEN !!!!!!!!)
+
+Aplicaciones Sistemas operativos modernos.
+
+Cluster de alto rendimiento, simulaciones científicas
+
+Redes neuranles distribuidades, entremaiento paralelo con MPU o CUDA
+
+Servidores Web
+
+Múltiples peticiones atendidas de manera concurrente.
+
