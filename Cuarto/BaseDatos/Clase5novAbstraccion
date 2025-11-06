@@ -1,0 +1,26 @@
+La calsificación, abstraer las características comunes.
+Mecanismo inverso: particularización
+
+Generalizacion, mecanismo de abstraccion, busca identificar caracteristias comunes a varias clases
+con el fin de construir una clase general, 
+
+jerarquía, se admite un solo nivel, se considera una única superclase, y superclases necesarias.
+
+Conjunto de ejemplares de una sublcase es tambien un ejemplar de una superclase.
+
+Mecanismo contrario especiaización.
+
+Exclusividad, restriccion, dos o más tipos d einterrelaciones tienen una restricción de Exclisividad
+con respecto a un tipo de entidad que participa en ambas interrelaciones si cada ejemplar de dicho
+tipo de entidad puede participar.
+
+Libro: 
+
+
+Exclusión, un ejemplar de una entidad A soo puede relacionarse con ejemplar de la entidad B, a través de una interrelacion I1 o I2, pero no ambos a la vez.
+
+Inclusividad, una restriccion de inlcusividad, todo ejemplear de una entidad A que participe en una
+interrelación I2 ha tendio que participar en una relaicon I1.
+
+Inclusión, todo ejempelar de una entidad A, para paricipar de una asociación de una entidad B, 
+necesario q esten relacionados con una segunda interrelación

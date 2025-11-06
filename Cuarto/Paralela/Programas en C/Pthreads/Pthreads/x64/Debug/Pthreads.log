@@ -1,2 +1,6 @@
 ﻿  Pthreads.cpp
-C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Pthreads\Pthreads\Pthreads.cpp(6,10): error C1083: No se puede abrir el archivo incluir: 'thread.h': No such file or directory
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Pthreads\Pthreads\Pthreads.cpp(25,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Pthreads\Pthreads\Pthreads.cpp(26,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Pthreads\Pthreads\Pthreads.cpp(27,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Pthreads\Pthreads\Pthreads.cpp(28,32): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Pthreads.vcxproj -> C:\Users\User\Documents\GitHub\Pasen-Software\Cuarto\Paralela\Programas en C\Pthreads\x64\Debug\Pthreads.exe

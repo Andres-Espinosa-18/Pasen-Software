@@ -3,11 +3,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <thread>
+#include <windows.h>
 #include <math.h>
 
-#define N 100
-#define NUM_HILOS 4
+#define N 1000000
+#define NUM_HILOS 14
 
 float datos[N];
 
@@ -17,41 +17,77 @@ typedef struct {
     int operacion;
 } Tarea;
 
-void* procesar(void* arg) {
+DWORD WINAPI procesar(LPVOID arg) {
     Tarea* t = (Tarea*)arg;
     for (int i = t->inicio; i <= t->fin; i++) {
         switch (t->operacion) {
-        case 0: datos[i] = datos[i] * datos[i]; break;
-        case 1: datos[i] = datos[i] * 2; break;
-        case 2: datos[i] = datos[i] + 5; break;
-        case 3: datos[i] = sqrt(datos[i]); break;
+        case 0: datos[i] = log10f(datos[i]); break;
+        case 1: datos[i] = log(datos[i]); break;
+        case 2: datos[i] = cos(datos[i]); break;
+        case 3: datos[i] = sin(datos[i]); break;
+        case 4: datos[i] = sqrt(datos[i]); break;
+        case 5: datos[i] = datos[i] * datos[i]; break;
+        case 6: datos[i] = datos[i] - (N / NUM_HILOS); break;
+        case 7: datos[i] = datos[i] + (N / NUM_HILOS); break;
         }
     }
-    pthread_exit(NULL);
+    return 0;
 }
 
 int main() {
-    pthread_t hilos[NUM_HILOS];
+    HANDLE hilos[NUM_HILOS];
     Tarea tareas[NUM_HILOS];
+    DWORD tiempoInicio, tiempoFin, tiempoTotal;
 
+    // Inicializar datos
     for (int i = 0; i < N; i++) {
         datos[i] = (float)(i + 1);
     }
 
+    int rep = 0;
+    printf("Datos sin procesar: \n");
+    while (rep < NUM_HILOS)
+    {
+
+        for (int i = 0; i < 10; i++)
+            printf("Datos[%i] = %.4f\n", (i + 1) + (N / NUM_HILOS * rep), datos[i + (N / NUM_HILOS * rep)]);
+        rep++;
+    }
+
+    // Medir tiempo inicial
+    tiempoInicio = GetTickCount();
+
+    // Crear hilos
     for (int i = 0; i < NUM_HILOS; i++) {
-        tareas[i].inicio = i * 25;
-        tareas[i].fin = tareas[i].inicio + 24;
+        tareas[i].inicio = i * N / NUM_HILOS;
+        tareas[i].fin = (i == NUM_HILOS - 1) ? N - 1 : (tareas[i].inicio + N / NUM_HILOS - 1);
         tareas[i].operacion = i;
-        pthread_create(&hilos[i], NULL, procesar, &tareas[i]);
+        hilos[i] = CreateThread(NULL, 0, procesar, &tareas[i], 0, NULL);
     }
+
+    WaitForMultipleObjects(NUM_HILOS, hilos, TRUE, INFINITE);
+
+    tiempoFin = GetTickCount();
+
+    tiempoTotal = tiempoFin - tiempoInicio;
 
     for (int i = 0; i < NUM_HILOS; i++) {
-        pthread_join(hilos[i], NULL);
+        CloseHandle(hilos[i]);
     }
 
-    for (int i = 0; i < N; i++) {
-        printf("datos[%d] = %.2f\n", i, datos[i]);
+    rep = 0;
+    printf("\nDatos Procesados: \n");
+    while (rep < NUM_HILOS)
+    {
+
+        for (int i = 0; i < 10; i++)
+            printf("Datos[%i] = %.4f\n", (i + 1) + (N / NUM_HILOS * rep), datos[i + (N / NUM_HILOS * rep)]);
+        rep++;
     }
+
+    printf("\nTiempo total de ejecucion: %lu ms\n", tiempoTotal);
+    printf("Numero de datos: %i\n", N);
+    printf("Numero de nucleos: %i", NUM_HILOS);
 
     return 0;
 }

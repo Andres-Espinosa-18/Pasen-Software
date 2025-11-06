@@ -3,8 +3,8 @@
 #include <pthread.h>
 #include <math.h>
 
-#define N 100
-#define NUM_HILOS 4
+#define N 1000000
+#define NUM_HILOS 20
 
 float datos[N];
 
@@ -31,9 +31,15 @@ int main() {
     pthread_t hilos[NUM_HILOS];
     Tarea tareas[NUM_HILOS];
 
+    clock_t start, end;
+    double tiempo;
+
     for (int i = 0; i < N; i++) {
         datos[i] = (float)(i + 1);
     }
+
+    start = clock();
+    
 
     for (int i = 0; i < NUM_HILOS; i++) {
         tareas[i].inicio = i * 25;
@@ -42,13 +48,19 @@ int main() {
         pthread_create(&hilos[i], NULL, procesar, &tareas[i]);
     }
 
+    end = clock();
+
+    tiempo = (double)(end - start) / CLOCKS_PER_SEC;
+
     for (int i = 0; i < NUM_HILOS; i++) {
         pthread_join(hilos[i], NULL);
     }
 
     for (int i = 0; i < N; i++) {
-        printf("datos[%d] = %.2f\n", i, datos[i]);
+        //printf("datos[%d] = %.2f\n", i, datos[i]);
     }
+
+    printf("%12.50f\n", tiempo);
 
     return 0;
 }

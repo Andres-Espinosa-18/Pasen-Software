@@ -1,0 +1,42 @@
+Concurrencia, procesos e hilos.
+Mejorar temas de tiempo, eficiencia, concurrencia, procesos e hilos
+Puede exisitr la concurrencia en un solo procesador
+
+Concurrencia, capacidad de ejecutar varias tareas durante el mismo período de tiempo, pero no
+necesariamente al mismo tiempo.. Permite gestionar múltiples dlujos de control
+Ejemplo: un servidor web que atiende mutiples peticiones alternando la CPU entre ellas.
+Servidores: SOCKETS, manera más primitiva de comunicación que trajo JAVA, pensar en 
+sistemas distribuidos.
+
+Deadlock, dos tareas, esperando mutuamente recursos de la otra, quedando bloqueadas.
+Starvation (inanición), una tarea nuinca obtiene acceso al recurso porque otras siempre tienne 
+priridad.
+
+Procesos.
+Programa en ejecución.
+Es independiente cada proceso tiene su propio espacio de direcciones de memoria, pila, registros, etc.
+
+Comunicación entre procesos mediante IPC (Inter-Process Comunicaction: pipes, sockets, colas).
+
+Ciclo de vida de un proceso, primer punto, crearse el procesos, pasa a un estado de list.
+Previos a colocar todo esto en memoria, preparandose para ejecutar, y luego terminar el hilo.
+Siempre hay unas cosas que hacen que pueda volver a ejecutarse, mantenerse en ese estado, o intentar
+acceder a un recurso bloqueado y estar en un estado de bloqueo
+
+Hilos. Proceso dentro devun proceso grande, un subproceso, comparte memoria y recursos del proceso
+que lo contiene.
+Se comunican fácilmente porque acceden al mismo espacio de direcciones. Memoria Comaprtida
+Livianos y rápidos que los procesos.
+
+Word, tarea de guardar automáticamente, corregir ortográfica.
+
+Hilos se ejcuta en un ambiente concurrente, si se ejcutan a la vez, paralelos.
+
+Hilos, pueden crearse a medida que se necesitan y destruirse al finalizar la tarea encomendada.
+Pueden exisitr siempre y quiedar libres al finalizar la tarea encomendada.
+
+Modelos de programación de Hilos, hilos a nivel de usuario, lenguje que nos permite crear los hilos.
+Otro mundo, trabajr bajo nivel, trabajar con el sistema operativo, nivel de Kernel.
+
+Paralelismo a nivel de Hilo, paralelismo de datos, los hilos operan en diferentes conjuntos de datos de 
+manera simultánea.
