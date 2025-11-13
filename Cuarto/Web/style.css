@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+:root{
+  --bg:#0f1720; --card:#0b1b28; --accent:#ff7a18; --text:#e6eef6;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter,system-ui,Arial; background:linear-gradient(180deg,#021017,#071827); color:var(--text);
+}
+.container{max-width:900px;margin:32px auto;padding:16px}
+h1{color:var(--accent);text-align:center}
+.card{background:rgba(255,255,255,0.03);padding:16px;border-radius:8px;margin:16px 0;box-shadow:0 4px 18px rgba(0,0,0,0.5)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+label{display:flex;flex-direction:column;font-size:14px}
+input,select{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:var(--text)}
+.actions{display:flex;gap:10px;margin-top:12px}
+button{background:var(--accent);border:none;padding:10px 16px;border-radius:6px;color:#071827;font-weight:600;cursor:pointer}
+button#btnPrint{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+#resumen p{margin:0}
+@media print{
+  body{background:white;color:black}
+  .card{border:0;box-shadow:none}
+  button, #regForm input, select { display:none }
+}

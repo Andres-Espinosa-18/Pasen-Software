@@ -1,0 +1,57 @@
+Semáforos y Regiones Críticas Condicionales.
+Objetivos de la clase.
+Comprender el concepto y utilidad de los semáforos como mecanismo de sincronización.
+Identificar el uso de regiones críticas condicionales en la resolución de problemas concurrentes.
+Implementar un ejemplo práctico en Java.
+
+Java clase: semaforo, me permite utilizar los métodos de esta clase.
+lógica del hilo. método run, estará la lógica, inicializar el hilo, método start().
+
+Algunos semáforos contorlando algunas variable.
+
+FUncion wait, funcion release. con estos métodos voy a poder contorlar esa región crítica, para que
+todos nos accedan a la vez.
+
+Semáfotos: Introducidos por Dijkstra en los 60's.
+
+Un semáforo es una variable o abstracción que s eutiliza para contorlar el acceso a recursos compartidos
+en jn entorno concurrente.
+Es miu útil para evitar condiciones de carrera.
+
+Paradigma estructurado, inútil, en entornos concurrentes.
+
+**SEMAFORO FUNCION EN PROGRAMACION ESTRUCTURADA: FALSO
+
+Sincronización con Semáforos Hay una plaza libre.
+
+Entro el padre, el hijo espera el padre sale.
+
+Entro el hijo, el ´padre espera, el hijo sale.
+
+Estudiar bien, entender el problema, para entender cuando habrá ujna región crítica.
+
+Inhibidor, algo que detenga, no deja avanzar todo el paralelismo, utilizar demasiado estas herramientas.
+
+Tipos de semáforos, semáforo binario (mutex)
+Solo puede tener valor 0 o 1
+Similar a un candado
+
+Semáforo contador
+Puede tener valores mayores a 1, permitiendo múltiples accesos concurrentes limitados.
+Cuidado, podemos crear una condicion de carrera,
+
+Operaciones básicas,
+wait() o acquire():
+Decremnta el semáforo- Si es menor a 0, el proceso se bloquea.
+signal() o release():
+Incrementa el semáforo. Si hay procesos bloquedos, despierta uno.
+
+Ejemplo clásico de semaforos.
+5 filósofos que necesitan almorzar. tenemos una mesa que puede acomodar sumultáneamente a no más
+de dos perosnas. Muestra tarea es alimentar a todos los filósofos. Ninguno de ellos deben pasar hambre
+y ninguno de ellos debe bloquearse, al tratar de sentarse a la mesa (debemos evitar el punto muerto)
+
+Semaphore sem = new Semaphora(2): el numero represetna cuantos hilos deseo que accedan a la vez
+en el caso de los filosofos, sé que pueden comer dos a la vez.
+
+**INVESTIGAR MÁS METODOS DE HILOS QUE RUN START

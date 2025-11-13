@@ -40,3 +40,9 @@ Otro mundo, trabajr bajo nivel, trabajar con el sistema operativo, nivel de Kern
 
 Paralelismo a nivel de Hilo, paralelismo de datos, los hilos operan en diferentes conjuntos de datos de 
 manera simultánea.
+
+JVM lo puede ejcutar como un thread realizando la llamada al método run()
+metodo start() habilitar a la maquina virtual de Java, pueda llamar al método run()
+método run, overwrite, sobreescritura, puedo colocar toda la lógica que quiero ejecutar.
+
+No confundir OJO.

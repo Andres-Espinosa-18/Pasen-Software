@@ -1,0 +1,16 @@
+Evolucion de la IPO
+Aplicaciones centradas en el usuario
+Único usuariointeracción escritorio
+
+Innovacion de consola al modo gráfico, ay existe interaccion, aparecen nuevos entornos de interacción
+hoy tenemos más métodos de interacción
+
+mecatrónica, elaborado un proyecto 3D parte médica, basados en una tomografía, usualmente en la parte 
+médica, problemas conocidos, cáncer, agarraron ese modelo, escalándolo a un modelo 3D, crearon
+lo q se mostraba en la radiografía en un objeto 3D. Al usuario le da una mejor percepción
+
+Nuevos entornos de interacción
+Multiusuario y multimodal
+Interacción más allá del escritorio
+
+

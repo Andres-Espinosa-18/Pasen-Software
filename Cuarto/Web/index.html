@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro de Cursos - Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Registro de Cursos en Línea</h1>
+
+    <section class="card">
+      <h2>Datos del Estudiante</h2>
+      <form id="regForm">
+        <div class="grid">
+          <label>Nombre<input id="nombre" name="nombre" required></label>
+          <label>Apellido<input id="apellido" name="apellido" required></label>
+          <label>Email<input id="email" name="email" type="email" required></label>
+          <label>Teléfono<input id="telefono" name="telefono" type="tel"></label>
+          <label>Fecha Nacimiento<input id="fnac" name="fecha_nacimiento" type="date"></label>
+        </div>
+
+        <h2>Curso</h2>
+        <div class="grid">
+          <label>Curso
+            <select id="curso" name="curso" required>
+              <option value="">-- Seleccione --</option>
+              <option value="1">CS101 - Introducción a la Web</option>
+              <option value="2">JS201 - JavaScript Avanzado</option>
+              <option value="3">DB301 - Bases de Datos</option>
+            </select>
+          </label>
+
+          <label>Instructor
+            <select id="instructor" name="instructor">
+              <option value="">-- Seleccione --</option>
+              <option value="1">María Pérez</option>
+              <option value="2">Juan Gómez</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Registrar</button>
+          <button type="button" id="btnPrint">Imprimir</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Resumen</h2>
+      <div id="resumen">
+        <p>No hay registro aún.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
