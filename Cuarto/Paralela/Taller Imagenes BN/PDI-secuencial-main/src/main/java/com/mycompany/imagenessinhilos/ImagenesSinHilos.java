@@ -15,6 +15,7 @@ public class ImagenesSinHilos {
             
             File carpetaEntrada = new File("../imagenes");
             File carpetaSalida = new File("../imagen_gris");
+            carpetaSalida.mkdirs();
             long tiempoTotal;
             tiempoTotal=0;
             int totalImgs=0;
@@ -69,10 +70,9 @@ public class ImagenesSinHilos {
                 File archivoSalida = new File(carpetaSalida, archivoImagen.getName());
                 ImageIO.write(imagen, "jpg", archivoSalida);
 
-                /*
+                
                 System.out.println("Imagen convertida a escala de grises y guardada como " + archivoImagen.getName());
-                System.out.println("Tiempo de ejecución: " + (fin - inicio) / 1_000_000 + " ms");
-                */
+                //System.out.println("Tiempo de ejecución: " + (fin - inicio) / 1_000_000 + " ms");
                 
                 tiempoTotal+=(fin-inicio)/1_000_000;
                 totalImgs++;
