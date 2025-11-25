@@ -6,10 +6,10 @@ public class Imagenes {
 
     public static void main(String[] args) {
         // 1. CONFIGURACIÓN
-        String rutaEntrada = "img"; 
-        String rutaSalida = "img_bln";
+        String rutaEntrada = "../imagenes"; 
+        String rutaSalida = "../imagen_gris";
         int totalImagenesAProcesar = 100;
-        int numeroDeHilos = 4; // REQUERIMIENTO: Usar 5 hilos
+        int numeroDeHilos = 25; // REQUERIMIENTO: Usar 5 hilos
 
         File carpetaEntrada = new File(rutaEntrada); // Asegúrate de que coincida con tu carpeta real
         File carpetaSalida = new File(rutaSalida);
