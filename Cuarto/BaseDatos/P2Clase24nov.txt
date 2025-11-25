@@ -1,0 +1,35 @@
+MODELO FISICO
+
+TODA LA estructura de nuestro modelo físico, generar código.,
+
+Diseño logico, estructura de datos, relaciones sin considerar detalles físicos
+
+COmponentes: tablas q fueron entidades
+Campos(atributos)
+Relaciones: Entrre tablas usando claves foraneas
+Reglas de ingtebridad: Primarias, foraneas, restricciones de unicidad y obligatoriedad.
+Restriccionesunicidad: check que habíamos puesto, columnas, not null, MANDAOTRAS
+serán not null.
+
+Obligadas: otro aspecto improtante es la normalización
+
+Eliminación de redundancias y conssitencias.
+
+Tranofrmacion diseño físico.
+
+Se iclutye tipo de datos ya especificos, que tipo de dato es el que voy a generar.
+Dependiendo del gestor, los tipos de datos cambina nombres.
+
+Usaremos oracle, familiarizarse.
+
+Índices, cada llave primaria en power designer crea ub índice.
+
+Particionamiento, espacio asignado tablespaces, turning perfonce, consideraciones de sguriad
+(Sisgte de BD avanzados)
+
+Mejor administracoin en el almacenamiento y consultas, tendré mejor performance.
+
+Leer código y generar, reocmendaciones, evaluar al carga esperada, en producción, ciertos querys
+
+Oracle SQL developer.
+
