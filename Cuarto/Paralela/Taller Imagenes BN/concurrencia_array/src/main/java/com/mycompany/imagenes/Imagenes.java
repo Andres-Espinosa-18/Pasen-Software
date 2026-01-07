@@ -1,101 +1,76 @@
 package com.mycompany.imagenes;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Imagenes {
 
     public static void main(String[] args) {
-        // 1. CONFIGURACIÓN
-        String rutaEntrada = "../imagenes"; 
-        String rutaSalida = "../imagen_gris";
-        int totalImagenesAProcesar = 100;
-        int numeroDeHilos = 25; // REQUERIMIENTO: Usar 5 hilos
 
-        File carpetaEntrada = new File(rutaEntrada); // Asegúrate de que coincida con tu carpeta real
+        // CONFIGURACIÓN
+        String rutaEntrada = "../imagenes";
+        String rutaSalida = "../imagen_gris";
+        int numeroDeHilos = 8;
+
+        File carpetaEntrada = new File(rutaEntrada);
         File carpetaSalida = new File(rutaSalida);
 
-        // Validaciones iniciales de carpetas
         if (!carpetaEntrada.exists()) {
-            System.out.println("Error: No existe la carpeta " + rutaEntrada);
+            System.out.println("Error: No existe la carpeta de entrada.");
             return;
         }
         if (!carpetaSalida.exists()) carpetaSalida.mkdir();
 
-        // 2. OBTENER IMÁGENES (USANDO ARRAYS)
-        // Filtramos solo jpg/png
-        File[] todosLosArchivos = carpetaEntrada.listFiles((d, n) -> n.endsWith(".jpg") || n.endsWith(".png"));
-        
-        if (todosLosArchivos == null || todosLosArchivos.length == 0) {
-            System.out.println("No se encontraron imágenes en la carpeta.");
+        // Cargar imágenes
+        File[] imagenes = carpetaEntrada.listFiles(
+                (d, n) -> n.toLowerCase().endsWith(".jpg") || n.toLowerCase().endsWith(".png")
+        );
+
+        if (imagenes == null || imagenes.length == 0) {
+            System.out.println("No se encontraron imágenes.");
             return;
         }
 
-        // Ajustamos la cantidad si hay menos de 25 imágenes
-        if (todosLosArchivos.length < totalImagenesAProcesar) {
-            System.out.println("Advertencia: Se necesitan 25 imágenes, pero solo hay " + todosLosArchivos.length);
-            totalImagenesAProcesar = todosLosArchivos.length;
+        // Crear workers
+        List<Worker> workers = new ArrayList<>();
+        List<Thread> hilos = new ArrayList<>();
+
+        for (int i = 0; i < numeroDeHilos; i++) {
+            Worker w = new Worker(carpetaSalida);
+            Thread t = new Thread(w, "Worker-" + i);
+            workers.add(w);
+            hilos.add(t);
+            t.start();
         }
 
-        // Creamos el array exacto de trabajo (recortamos el array original a 25 o menos)
-        File[] archivosAProcesar = new File[totalImagenesAProcesar];
-        // System.arraycopy(origen, inicioOrigen, destino, inicioDestino, cantidad)
-        System.arraycopy(todosLosArchivos, 0, archivosAProcesar, 0, totalImagenesAProcesar);
+        BalanceadorCarga balanceador = new BalanceadorCarga(workers);
 
-        System.out.println("Procesando " + archivosAProcesar.length + " imágenes con " + numeroDeHilos + " hilos.");
-
-        // 3. DIVIDIR EL TRABAJO Y CREAR HILOS
-        Thread[] hilos = new Thread[numeroDeHilos];
-        
-        // Cálculo del tamaño del bloque
-        int tamanoBloque = archivosAProcesar.length / numeroDeHilos; 
-        
         long inicio = System.nanoTime();
 
-        for (int i = 0; i < numeroDeHilos; i++) {
-            // Calcular índices de inicio y fin para el sub-array
-            int inicioIndice = i * tamanoBloque;
-            int finIndice;
-            
-            // Si es el último hilo, que tome todo lo que sobre (por si la división no es exacta)
-            if (i == numeroDeHilos - 1) {
-                finIndice = archivosAProcesar.length;
-            } else {
-                finIndice = inicioIndice + tamanoBloque;
-            }
-
-            // Calculamos cuántos archivos le tocan a este hilo
-            int cantidadParaHilo = finIndice - inicioIndice;
-
-            // Validación: Solo crear hilo si hay archivos para procesar
-            if (cantidadParaHilo > 0) {
-                // Creamos un sub-array específico para este hilo
-                File[] trabajoParaHilo = new File[cantidadParaHilo];
-                
-                // Copiamos del array principal al sub-array del hilo
-                System.arraycopy(archivosAProcesar, inicioIndice, trabajoParaHilo, 0, cantidadParaHilo);
-                
-                System.out.println("Asignando al Hilo " + i + ": " + trabajoParaHilo.length + " imágenes.");
-
-                // Crear y arrancar el hilo pasando el ARRAY
-                hilos[i] = new Thread(new FiltroGris(trabajoParaHilo, carpetaSalida));
-                hilos[i].start();
-            }
+        // Distribución adaptativa del trabajo
+        for (File img : imagenes) {
+            balanceador.asignarImagen(img);
         }
 
-        // 4. ESPERAR A LOS HILOS (JOIN)
-        for (int i = 0; i < numeroDeHilos; i++) {
-            if (hilos[i] != null) {
-                try {
-                    hilos[i].join();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        // Indicar fin de trabajos
+        for (Worker w : workers) {
+            w.detener();
+        }
+
+        // Esperar a que terminen los hilos
+        for (Thread t : hilos) {
+            try {
+                t.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 
         long fin = System.nanoTime();
+
         System.out.println("--------------------------------------------------");
-        System.out.println("Proceso finalizado exitosamente.");
+        System.out.println("Proceso finalizado correctamente.");
         System.out.println("Tiempo total: " + (fin - inicio) / 1_000_000 + " ms");
     }
 }

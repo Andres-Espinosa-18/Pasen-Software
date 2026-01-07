@@ -19,6 +19,10 @@ public class Administrador {
         this.nHilos=nHilos;
     }
     
+    public void setImagen(BufferedImage newImagen){
+        this.imagen=newImagen;
+    }
+    
     public void procesarImagen(ExecutorService pool) throws Exception{
         int height=imagen.getHeight();
         int filasPorHilo=height/nHilos;
