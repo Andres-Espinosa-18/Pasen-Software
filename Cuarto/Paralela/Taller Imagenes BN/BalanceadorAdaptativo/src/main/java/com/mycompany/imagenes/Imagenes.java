@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class Imagenes {
 
     public static void main(String[] args) {
@@ -14,8 +13,8 @@ public class Imagenes {
         String rutaEntrada = "../imagenes";
         String rutaSalida = "../imagen_gris";
         String rutaCSV = "../resultados.csv";
-        int numeroDeHilos = 8;
-        int ejecuciones=2;
+        int numeroDeHilos = 20;
+        int ejecuciones=10;
 
         File carpetaEntrada = new File(rutaEntrada);
         File carpetaSalida = new File(rutaSalida);
